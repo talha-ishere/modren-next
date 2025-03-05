@@ -66,9 +66,9 @@ const Menuitems = [
   },
   {
     id: uniqueId(),
-    title: "Sample Page",
+    title: "Users",
     icon: IconAperture,
-    href: "/sample-page",
+    href: "/users",
   },
 ];
 
