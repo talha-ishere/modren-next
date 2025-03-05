@@ -1,11 +1,11 @@
 export const validateForm = (
-  values: { name: string; email: string; password: string },
+  values: { name?: string; email: string; password: string },
   field?: string
 ) => {
   const errors: { name?: string; email?: string; password?: string } = {};
 
   if (!field || field === "name") {
-    if (values.name.trim() === "") {
+    if (values.name?.trim() === "") {
       errors.name = "Name cannot be empty";
     }
   }
@@ -28,3 +28,9 @@ export const validateForm = (
 
   return errors;
 };
+
+// ✅ Now works because 'name' is optional in validateForm
+export const validateLoginForm = (
+  values: { email: string; password: string },
+  field?: string
+) => validateForm(values, field);
